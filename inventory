@@ -15,7 +15,7 @@
         }
         h1{
             text-align: center;
-            color: #033382;
+            color: #32425b;
             
             border: solid azure;
             border-radius: 20%;
@@ -56,29 +56,29 @@
     <div id="step1">
     Step 1: <br>
     Select a Pickup <br>
-    Location: <input type="text" name="pickupLocation">
-    Day <input type="month" name="pickupDay">
-    Time <input type="time" name="pickupTime">
+    Location: <input type="text" name="pickupLocation" id="pickupLocation" required>
+    Day <input type="date" name="pickupDay" id="pickupDay" required>
+    Time <input type="time" name="pickupTime" value="12:00" required>
     </div>
     <div id="step2">
     Step 2: <br>
     Choose vehicle size:
         <div class="dropdown">
-    <select>
-        <option value="car">Car</option>
-        <option value="truck">Truck</option>
-        <option value="van">Van</option>
-        <option value="suv">SUV</option>
-        <option value="herse">Herse</option>
+    <select required>
+        <option value="car" name="car" id="car">Car $15/day</option>
+        <option value="truck" name="truck" id="truck">Truck $17/day</option>
+        <option value="van" name="van" id="van">Van $17/day</option>
+        <option value="suv" name ="suv" id="suv">SUV $20/day</option>
+        <option value="hearse" name="hearse" id="hearse">Herse $20/day</option>
     </select>
         </div>
     </div>
     <div id="step3">
         Step 3: <br>
         Select Drop Off<br>
-        Location: <input type="text" name="dropOffLocation">
-        Day <input type="month" name="dropOffDay">
-        Time <input type="time" name="dropOffTime">
+        Location: <input type="text" name="dropOffLocation" id="dropOffLocation" required>
+        Day <input type="date" name="dropOffDay" id="dropOffDay" required>
+        Time <input type="time" name="dropOffTime" id="dropOffTime" value="12:00" required>
         <br><br>
         <input type="submit">
     </div>
