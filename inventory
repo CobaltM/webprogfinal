@@ -58,7 +58,7 @@
     Select a Pickup <br>
     Location: <input type="text" name="pickupLocation" id="pickupLocation" required>
     Day <input type="date" name="pickupDay" id="pickupDay" required>
-    Time <input type="time" name="pickupTime" value="12:00" required>
+    Time <input type="time" name="pickupTime" value="12:00" id="pickupTime" required>
     </div>
     <div id="step2">
     Step 2: <br>
