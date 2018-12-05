@@ -14,7 +14,7 @@
         }
         h1{
             text-align: center;
-            color: #033382;
+            color: #32425b;
             font-family: "Lucida Sans Unicode", sans-serif;
             border: solid azure;
             border-radius: 20%;
@@ -42,13 +42,13 @@
     <h1>Register to Rent Car.</h1>
 
     <form action="register.php" method="POST">
-        First Name:   &emsp; &nbsp; <input type="text" name="firstName"><br>
+        First Name:   &emsp; &nbsp; <input type="text" name="firstName" id="firstName" required><br>
         <br>
-        Last Name:  &emsp; &nbsp; <input type="text" name="lastName"> <br>
+        Last Name:  &emsp; &nbsp; <input type="text" name="lastName" id="lastName" required> <br>
         <br>
-        Phone Number:  &nbsp;<input type="number" name="phone"><br>
+        Phone Number:  &nbsp;<input type="number" name="phone" id="phone" required><br>
         <br>
-        Email: &emsp;  &emsp; &ensp; &nbsp; <input type="email" name="email"><br>
+        Email: &emsp;  &emsp; &ensp; &nbsp; <input type="email" name="email" id="email" required><br>
         <br>
 
         <input type="submit">
