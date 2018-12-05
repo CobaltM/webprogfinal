@@ -14,7 +14,7 @@
         }
         h1{
             text-align: center;
-            color: #033382;
+            color: #32425b;
             font-family: "Lucida Sans Unicode", sans-serif;
             border: solid azure;
             border-radius: 20%;
@@ -41,9 +41,9 @@
     <h1>Login to Rent Car.</h1>
 
     <form>
-        Username: <input type="text" name="user"><br>
+        Username: <input type="text" name="user" id="user" required><br>
         <br>
-        Password: <input type="password" name="pass"><br>
+        Password: <input type="password" name="pass" id="pass" required><br>
         <br>
         <input type="submit">
     </form>
