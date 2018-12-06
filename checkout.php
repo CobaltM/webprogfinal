@@ -74,7 +74,7 @@
             $tot=$tot+$_SESSION['viewcart'][$i*3+2];
         }
         echo "<p>Total Price: $".$tot."</p>";
-        echo "<a href='cc.php'>pay</>";
+        echo "<a href='cc.html'>pay</>";
     	?>
     </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$vt=$_POST['vtype'];
+	$_SESSION['vtype']=$vt;
 	if($vt==1){
 		$c=15;
 	}
@@ -16,7 +17,7 @@
 	if($time>0){
 		$_SESSION['baddate']= False;
 		array_push($_SESSION["viewcart"],$vt,$time,$c*$time);
-		array_push($_SESSION["cart"], ",".$_SESSION["uid"].",".$_POST['pickuplocation'].",'".$_POST['pickupDay']." ".$_POST['pickupTime'].":00',".$_POST['vtype'].",".$_POST['dropofflocation'].",'".$_POST["dropOffDay"]." ".$_POST['dropOffTime'].":00')");
+		array_push($_SESSION["cart"], ",".$_SESSION["uid"].",".$_POST['pickuplocation'].",'".$_POST['pickupDay']." ".$_POST['pickupTime'].":00',".$_POST['dropofflocation'].",'".$_POST["dropOffDay"]." ".$_POST['dropOffTime'].":00')");
 	header("Location: checkout.php");
     die();
 	}
