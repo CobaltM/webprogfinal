@@ -1,4 +1,4 @@
-<?php 
+<?php
   define('DB_SERVER', 'localhost');
   define('DB_USERNAME', 'scaldwell9');
   define('DB_PASSWORD', 'scaldwell9');
@@ -12,26 +12,28 @@
   session_start();
   $_SESSION["loginq"]=False;
 
-  $_SESSION["username"]=addslashes($_POST["user"]);
+  $_SESSION["username"]=addslashes($_POST["username"]);
 
-  $password=hash('ripemd160', addslashes($_POST["pass"]));
-
-  $sql = "SELECT uid FROM users WHERE username='".$_SESSION["username"]."' AND password='".$password."';";
+  $password=hash('ripemd160', addslashes($_POST["password"]));
+  $sql= "SELECT uid FROM users ORDER BY uid DESC LIMIT 1;";
   $res=$db->query($sql);
   if ($res->num_rows > 0) {
     // output data of each row
     while($row = $res->fetch_assoc()) {
-        $_SESSION["cart"]=array();
-        $_SESSION["loginq"]=True;
-        $_SESSION["uid"]=$row["uid"];
-        header("Location: menu.php");
-        die();
+        $uid=(int)$row["uid"]+1;
       }
     }
-    else {
-    header("Location: login.php");
-    die();
+  echo $uid;
+  $sql = "INSERT INTO users (uid, password, username) values(".$uid.",'".$password."','".$_SESSION["username"]."');";
+  if ($db->query($sql) === TRUE) {
+  	$_SESSION["cart"]=array();
+        $_SESSION["loginq"]=True;
+        $_SESSION["uid"]=$uid;
+        header("Location: menu.php");
+        die();
+} else {
+	echo $sql;
+    //header("Location: register.php");
+    //die("Something went wrong");
 }
-
-
 ?>

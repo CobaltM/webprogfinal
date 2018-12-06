@@ -72,7 +72,7 @@
         Step 2: <br>
         Choose vehicle size:
             <div class="dropdown">
-        <select required>
+        <select required name = "vtype">
             <option value=1 name="car" id="car">Car $15/day</option>
             <option value=2 name="truck" id="truck">Truck $17/day</option>
             <option value=3 name="van" id="van">Van $17/day</option>

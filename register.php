@@ -41,19 +41,31 @@
 <body>
     <h1>Register to Rent Car.</h1>
 
-    <form action="register.php" method="POST">
-        First Name:   &emsp; &nbsp; <input type="text" name="firstName" id="firstName" required><br>
+    <form action="registervalidate.php" method="POST">
+        Username:   &emsp; &nbsp; <input type="Username" name="username" id="firstName" required><br>
         <br>
-        Last Name:  &emsp; &nbsp; <input type="text" name="lastName" id="lastName" required> <br>
+        Password:  &emsp; &nbsp; <input type="Password" name="password" id="password" required> <br>
         <br>
-        Phone Number:  &nbsp;<input type="number" name="phone" id="phone" required><br>
-        <br>
-        Email: &emsp;  &emsp; &ensp; &nbsp; <input type="email" name="email" id="email" required><br>
+        Confirm Password:  &nbsp;<input type="Password" name="confirm_password" id="confirm_password" required><br>
         <br>
 
         <input type="submit">
 
+        <script>
+        var password = document.getElementById("password")
+          , confirm_password = document.getElementById("confirm_password");
 
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+        </script>
     </form>
     
 </body>
