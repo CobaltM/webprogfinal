@@ -51,7 +51,12 @@
 </head>
 <body>
     <h1>Inventory of Rent Car.</h1>
-
+    <?php
+        session_start();
+        if($_SESSION['baddate']){
+            echo "<script>alert('Dropoff must be AFTER pickup');</script>";
+        }
+    ?>
     <form action="addtocart.php" method="post">
         <div id="step1">
         Step 1: <br>

@@ -26,7 +26,8 @@
   echo $uid;
   $sql = "INSERT INTO users (uid, password, username) values(".$uid.",'".$password."','".$_SESSION["username"]."');";
   if ($db->query($sql) === TRUE) {
-  	$_SESSION["cart"]=array();
+  		$_SESSION["cart"]=array();
+  		$_SESSION["viewcart"]=array();
         $_SESSION["loginq"]=True;
         $_SESSION["uid"]=$uid;
         header("Location: menu.php");

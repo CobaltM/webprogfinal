@@ -22,6 +22,7 @@
     // output data of each row
     while($row = $res->fetch_assoc()) {
         $_SESSION["cart"]=array();
+        $_SESSION["viewcart"]=array();
         $_SESSION["loginq"]=True;
         $_SESSION["uid"]=$row["uid"];
         header("Location: menu.php");
