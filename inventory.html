@@ -56,7 +56,15 @@
     <div id="step1">
     Step 1: <br>
     Select a Pickup <br>
-    Location: <input type="text" name="pickupLocation" id="pickupLocation" required>
+    Location: 
+    <select required>
+        <option value=1 name="pickupLocation1" id="pickupLocation1" >Airport</option>
+        <option value=1 name="pickupLocation2" id="pickupLocation2" >South</option>
+        <option value=1 name="pickupLocation3" id="pickupLocation3" >Downtown</option>
+        <option value=1 name="pickupLocation4" id="pickupLocation4" >Bus Station</option>
+        <option value=1 name="pickupLocation5" id="pickupLocation5" >Train Station</option>
+        <option value=1 name="pickupLocation6" id="pickupLocation6" >Midtown</option>
+    </select>
     Day <input type="date" name="pickupDay" id="pickupDay" required>
     Time <input type="time" name="pickupTime" value="12:00" id="pickupTime" required>
     </div>
@@ -65,18 +73,25 @@
     Choose vehicle size:
         <div class="dropdown">
     <select required>
-        <option value="car" name="car" id="car">Car $15/day</option>
-        <option value="truck" name="truck" id="truck">Truck $17/day</option>
-        <option value="van" name="van" id="van">Van $17/day</option>
-        <option value="suv" name ="suv" id="suv">SUV $20/day</option>
-        <option value="hearse" name="hearse" id="hearse">Herse $20/day</option>
+        <option value=1 name="car" id="car">Car $15/day</option>
+        <option value=2 name="truck" id="truck">Truck $17/day</option>
+        <option value=3 name="van" id="van">Van $17/day</option>
+        <option value=4 name ="suv" id="suv">SUV $20/day</option>
     </select>
         </div>
     </div>
     <div id="step3">
         Step 3: <br>
         Select Drop Off<br>
-        Location: <input type="text" name="dropOffLocation" id="dropOffLocation" required>
+        Location: 
+        <select required>
+            <option value=1 name="pickupLocation1" id="pickupLocation1" >Airport</option>
+            <option value=1 name="pickupLocation2" id="pickupLocation2" >South</option>
+            <option value=1 name="pickupLocation3" id="pickupLocation3" >Downtown</option>
+            <option value=1 name="pickupLocation4" id="pickupLocation4" >Bus Station</option>
+            <option value=1 name="pickupLocation5" id="pickupLocation5" >Train Station</option>
+            <option value=1 name="pickupLocation6" id="pickupLocation6" >Midtown</option>
+        </select>
         Day <input type="date" name="dropOffDay" id="dropOffDay" required>
         Time <input type="time" name="dropOffTime" id="dropOffTime" value="12:00" required>
         <br><br>

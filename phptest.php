@@ -15,7 +15,13 @@
          }
          
          echo 'Connected successfully';
-    
+    $sql = "INSERT INTO users (uid, username, password)
+			VALUES (11112, 'ethancaldwell', 'thisisapassword')";
+	if ($db->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 ?>
 	
    </body>

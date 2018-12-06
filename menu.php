@@ -20,8 +20,8 @@
             border-radius: 20%;
             padding: 1em;
             background-color: rgb(240, 255, 255, .9);
-            margin-left: 40%;
-            margin-right: 40%;
+            margin-left: 20%;
+            margin-right: 20%;
         }
         #home{
             border: #32425b;
@@ -51,12 +51,14 @@
     </style>
 </head>
 <body>
-    <h1>Rent Car.</h1>
-
+<?php
+  session_start();
+  echo "<h1>Welcome ".$_SESSION["username"]."</h1>";
+  ?>
   <div id="home">
-     <button><a href="register.php"> New User</a></button>
-     <button><a href="login.php"> Returning User</a></button>
+     <button><a href="inventory.php"> Rent A Car</a></button>
 
   </div>
+
 </body>
 </html>

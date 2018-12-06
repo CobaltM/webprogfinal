@@ -40,7 +40,7 @@
 <body>
     <h1>Login to Rent Car.</h1>
 
-    <form>
+    <form action='validate.php' method='post'>
         Username: <input type="text" name="user" id="user" required><br>
         <br>
         Password: <input type="password" name="pass" id="pass" required><br>
