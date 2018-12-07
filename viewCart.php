@@ -68,7 +68,6 @@
         $tot=0;
         //echo "<p>Car for ".$_SESSION['viewcart'][1*3+1]." Days. Price : $".$_SESSION['viewcart'][1*3+2]."</p>";
         for($i=0;$i<$l;$i++){
-            echo "<tr>";
             if($_SESSION['viewcart'][$i*3]==1){
                 echo "<p>Car for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
             }
@@ -79,10 +78,9 @@
                 echo "<p>Van for".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p><br><br>";
             }
             else{
-                echo "<p>SUV for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2]."</p><br><br>";
+                echo "<p>SUV for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p><br><br>";
             }
-            echo "<button value='remove this item' onclick='removeItem(".$i*3."'/>";
-            echo "</tr>";
+            echo "<button onclick='removeItem(".($i*3).")'>remove this item</button>";
             $tot=$tot+$_SESSION['viewcart'][$i*3+2];
         }
         echo "<p>Total Price: $".$tot.".00</p>";
