@@ -62,6 +62,7 @@
   <div id="home">
      <button><a href="inventory.php"> Rent A Car</a></button>
      <button><a href="parkinginventory.php"> Buy Parking</a></button>
+     <button><a href='viewCart.php'> View Cart </a></button>
      
      <?php
   define('DB_SERVER', 'localhost');
@@ -72,17 +73,31 @@
   if(! $db ) {
            die('Could not connect: ' . mysql_error());
         }
+
     $sql= "SELECT * FROM usedby WHERE uid=".$_SESSION["uid"]." and DATE(NOW())<rentalend;";
         $res=$db->query($sql);
           if ($res->num_rows > 0) {
-            echo "<p>Your current orders: </p>";
+            echo "<p>Your current rental orders: </p>";
             // output data of each row
             while($row = $res->fetch_assoc()) {
                 $vid=(int)$row["vid"];
                 $sql2= "SELECT name FROM vehicles WHERE vid=".$vid.";";
                 $res2=$db->query($sql2);
                 $row2 = $res2->fetch_assoc();
-                echo "<p>".$row2["name"]." ".$row["rentalperiod"]." to ".$row["rentalend"]."</p>";
+                echo "<p>".$row2["name"]." <br>FROM ".$row["rentalperiod"]." <br>TO ".$row["rentalend"]."</p>";
+              }
+            }
+    $sql= "SELECT * FROM parkedby WHERE uid=".$_SESSION["uid"]." and DATE(NOW())<periodend;";
+        $res=$db->query($sql);
+          if ($res->num_rows > 0) {
+            echo "<p>Your current parking orders: </p>";
+            // output data of each row
+            while($row = $res->fetch_assoc()) {
+                $pid=(int)$row["pid"];
+                $sql2= "SELECT name FROM parking WHERE pid=".$pid.";";
+                $res2=$db->query($sql2);
+                $row2 = $res2->fetch_assoc();
+                echo "<p>".$row2["name"]." <br>FROM ".$row["period"]." <br>TO ".$row["periodend"]."</p>";
               }
             }
           

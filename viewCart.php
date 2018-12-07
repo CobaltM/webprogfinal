@@ -42,6 +42,7 @@
             color: azure;
         }
         button{
+            float:left;
             background-color: #32425b;
             color:azure;
             border: none;
@@ -64,6 +65,7 @@
    ?>
 </head>
 <body>
+    <button><a href='menu.php'> Back to menu </a></button>
     <h1>View Your Cart of Rent Car. </h1>
 
     <div>
@@ -83,6 +85,10 @@
         $tot=0;
         //echo "<p>Car for ".$_SESSION['viewcart'][1*3+1]." Days. Price : $".$_SESSION['viewcart'][1*3+2]."</p>";
         for($i=0;$i<$l;$i++){
+            if($_SESSION['viewcart'][$i*3+2]%982451653==0){
+                $vip=True;
+                $vipd=982451653;
+            }
             if($_SESSION['viewcart'][$i*3]==1){
                 echo "<p>Car for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
             }
@@ -96,39 +102,97 @@
                 echo "<p>SUV for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
             }
             elseif($_SESSION['viewcart'][$i*3]==11){
+                echo "HELO";
+                if($vip){
+                    echo "<p>Parking at Hotel 1 for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking at Hotel 1 for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
+
             }
             elseif($_SESSION['viewcart'][$i*3]==12){
+                if($vip){
+                    echo "<p>Parking at Hotel 2 for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking at Hotel 2 for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==13){
+                if($vip){
+                    echo "<p>Parking at Grand Theatre for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking at Grand Theatre for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==14){
+                if($vip){
+                    echo "<p>Parking at Restaurants for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking at Restaurants for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==15){
+                if($vip){
+                    echo "<p>Parking at Train Stations for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking at Train Stations for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==16){
+                if($vip){
+                    echo "<p>Parking at Grand Hotel for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking at Grand Hotel for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==17){
-                echo "<p>Parking at the Docks for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                if($vip){
+                    echo "<p>Parking at Docks for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
+                echo "<p>Parking at Docks for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==18){
+                if($vip){
+                    echo "<p>Parking Deck 3 access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking Deck 3 access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==19){
+                if($vip){
+                    echo "<p>Parking Deck 2 access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
                 echo "<p>Parking Deck 2 access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
             }
             elseif($_SESSION['viewcart'][$i*3]==20){
-                echo "<p>Parking Deck 1 Access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                if($vip){
+                    echo "<p>Parking Deck 1 access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
+                }
+                else{
+                echo "<p>Parking Deck 1 access for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
+                }
+            }
+            else{
+                echo $_SESSION['viewcart'][$i*3];
             }
             echo "<form action='viewCart.php' method='POST'>";
             echo "<input value=".($i+1)." type='hidden' name='removethis' />";
             echo "<input class='subm' type=submit value='Remove this item'>";
             echo "</form>";
+            if($vip){
+                $tot=$tot+($_SESSION['viewcart'][$i*3+2]/$vipd);
+            }
             $tot=$tot+$_SESSION['viewcart'][$i*3+2];
         }
         echo "<p>Total Price: $".$tot.".00</p>";

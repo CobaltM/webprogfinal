@@ -39,7 +39,7 @@
 </head>
 <body>
     <h1>Login to Rent Car.</h1>
-
+    <a href='index.html'> Back to menu </a>
     <form action='validate.php' method='post'>
         Username: <input type="text" name="user" id="user" required><br>
         <br>

@@ -45,11 +45,27 @@
             min-width: 160px;
             
         }
+        button{
+            float: left;
+            background-color: #32425b;
+            color:azure;
+            border: none;
+            padding: 2em;
+            
+            border-radius: 10%;
+        }
+        a{
+            color:azure;
+        }
+        a:visited{
+            color: #c7daf7;
+        }
        
     </style>
   
 </head>
 <body>
+    <button><a href='menu.php'> Back to menu </a></button>
     <h1>Parking</h1>
     <?php
         session_start();
@@ -81,6 +97,8 @@
             <option value=19  id="Location9" >Deck 2 ($3 per day)</option>
             <option value=20  id="Location10" >Deck 1 ($3 per day)</option>
         </select>
+        <p>VIP?</p>
+        <input type='checkbox' value=1 name='vip'> I want vip parking for this venue (+$9 per day)<br>
             </div>
         </div>
         <div id="step3">

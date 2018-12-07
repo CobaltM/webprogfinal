@@ -45,11 +45,27 @@
             min-width: 160px;
             
         }
+         button{
+            float: left;
+            background-color: #32425b;
+            color:azure;
+            border: none;
+            padding: 2em;
+            
+            border-radius: 10%;
+        }
+        a{
+            color:azure;
+        }
+        a:visited{
+            color: #c7daf7;
+        }
        
     </style>
   
 </head>
 <body>
+    <button><a href='menu.php'> Back to menu </a></button>
     <h1>Inventory of Rent Car.</h1>
     <?php
         session_start();

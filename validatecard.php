@@ -42,18 +42,18 @@
 		  echo "<p> </p>";
 		  if ($db->query($sql) === TRUE) {
 		  	echo "<p> successfully completed insert </p>";
-		} else {
-			echo $sql;
-		    //header("Location: register.php");
-		    //die("Something went wrong");
-		}
-		$sql = "UPDATE vehicles SET availability=0 WHERE vid=".$vid.";";
-		if ($db->query($sql) === TRUE) {
-		  	echo "<p> successfully completed update </p>";
-		  	$_SESSION['viewcart']=array();
-		  	$_SESSION['cart']=array();
-		  	header("Location: menu.php");
-		  	die();
+		  	$sql = "UPDATE vehicles SET availability=0 WHERE vid=".$vid.";";
+			if ($db->query($sql) === TRUE) {
+			  	echo "<p> successfully completed update </p>";
+			  	$_SESSION['viewcart']=array();
+			  	$_SESSION['cart']=array();
+			  	header("Location: menu.php");
+			  	die();
+			} else {
+				echo $sql;
+			    //header("Location: register.php");
+			    //die("Something went wrong");
+			}
 		} else {
 			echo $sql;
 		    //header("Location: register.php");
@@ -62,7 +62,7 @@
 	}
 	else{
 
-		$sql= "SELECT pbid FROM parkedbyby ORDER BY pbid DESC LIMIT 1;";
+		$sql= "SELECT pbid FROM parkedby ORDER BY pbid DESC LIMIT 1;";
 		$res=$db->query($sql);
 		  if ($res->num_rows > 0) {
 		    // output data of each row
@@ -89,24 +89,25 @@
 		  echo "<p> </p>";
 		  if ($db->query($sql) === TRUE) {
 		  	echo "<p> successfully completed insert </p>";
+		  	$sql = "UPDATE parking SET availability=0 WHERE pid=".$pid.";";
+			if ($db->query($sql) === TRUE) {
+				$_SESSION['viewcart']=array();
+				$_SESSION['cart']=array();
+
+			  	echo "<p> successfully completed update </p>";
+		  	header("Location: menu.php");
+		  	die();
+			} else {
+			echo $sql;
+		    //header("Location: register.php");
+		    //die("Something went wrong");
+			}
 		} else {
 			echo $sql;
 		    //header("Location: register.php");
 		    //die("Something went wrong");
 		}
-		$sql = "UPDATE parking SET availability=0 WHERE pid=".$pid.";";
-		if ($db->query($sql) === TRUE) {
-			$_SESSION['viewcart']=array();
-			$_SESSION['cart']=array();
-
-		  	echo "<p> successfully completed update </p>";
-	  	header("Location: menu.php");
-	  	die();
-		} else {
-		echo $sql;
-	    //header("Location: register.php");
-	    //die("Something went wrong");
-		}
+		
 	}
 }
 		  
