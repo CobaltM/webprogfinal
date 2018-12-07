@@ -13,6 +13,7 @@
   $l = $_SESSION["viewcart"];
   $l = (sizeof($l))/3;
   for($i=0;$i<$l;$i++){
+  	if($_SESSION['viewcart'][$i*3]<10){
         $sql= "SELECT ubid FROM usedby ORDER BY ubid DESC LIMIT 1;";
 		$res=$db->query($sql);
 		  if ($res->num_rows > 0) {
@@ -54,6 +55,7 @@
 		    //header("Location: register.php");
 		    //die("Something went wrong");
 		}
+	}
 		  $_SESSION['viewcart']=array();
 		  $_SESSION['cart']=array();
 
