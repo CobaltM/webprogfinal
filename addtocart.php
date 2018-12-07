@@ -13,9 +13,9 @@
 	}
 	$t1=strtotime($_POST['dropOffDay']." ".$_POST['dropOffTime'].":00");
 	$t2=strtotime($_POST['pickupDay']." ".$_POST['pickupTime'].":00");
-	time=round(($t1-$t2)/ (60 * 60 * 24));
+	$time=round(($t1-$t2)/ (60 * 60 * 24));
 	$today=strtotime(date('Y-m-d'));
-	$req=strtotime($_POST['sDay']);
+	$req=strtotime($_POST['pickupDay']);
 	$validdate = $today<$req;
 	if($time>0 && $validdate){
 		$_SESSION['baddate']= False;
