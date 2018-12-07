@@ -45,10 +45,6 @@
 		  	$sql = "UPDATE vehicles SET availability=0 WHERE vid=".$vid.";";
 			if ($db->query($sql) === TRUE) {
 			  	echo "<p> successfully completed update </p>";
-			  	$_SESSION['viewcart']=array();
-			  	$_SESSION['cart']=array();
-			  	header("Location: menu.php");
-			  	die();
 			} else {
 				echo $sql;
 			    //header("Location: register.php");
@@ -91,12 +87,7 @@
 		  	echo "<p> successfully completed insert </p>";
 		  	$sql = "UPDATE parking SET availability=0 WHERE pid=".$pid.";";
 			if ($db->query($sql) === TRUE) {
-				$_SESSION['viewcart']=array();
-				$_SESSION['cart']=array();
-
 			  	echo "<p> successfully completed update </p>";
-		  	header("Location: menu.php");
-		  	die();
 			} else {
 			echo $sql;
 		    //header("Location: register.php");
@@ -110,6 +101,10 @@
 		
 	}
 }
+$_SESSION['viewcart']=array();
+$_SESSION['cart']=array();
+header("Location: menu.php");
+die();
 		  
 		  
 ?>
