@@ -70,7 +70,7 @@
     <?php
         session_start();
         if($_SESSION['baddate']){
-            echo "<script>alert('Dropoff must be AFTER pickup');</script>";
+            echo "<script>alert('End date must be AFTER start and start must be after today');</script>";
         }
     ?>
     <form action="addtocartparking.php" method="post">

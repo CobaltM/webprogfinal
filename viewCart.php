@@ -66,10 +66,10 @@
 </head>
 <body>
     <button><a href='menu.php'> Back to menu </a></button>
-    <h1>View Your Cart of Rent Car. </h1>
+    <h1>View Your Cart </h1>
 
     <div>
-    <h2> Thank you for choosing Rent Car. </h2>
+    <h2> Thank you</h2>
     <?php
       session_start();
       
@@ -102,7 +102,6 @@
                 echo "<p>SUV for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
             }
             elseif($_SESSION['viewcart'][$i*3]==11){
-                echo "HELO";
                 if($vip){
                     echo "<p>Parking at Hotel 1 for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".($_SESSION['viewcart'][$i*3+2]/$vipd).".00</p><p><b>VIP</b></p>";
                 }
