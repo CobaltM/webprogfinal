@@ -47,6 +47,10 @@
         a:visited{
             color: #c7daf7;
         }
+        p{
+            text-align: left;
+            color: white;
+        }
         
     </style>
 </head>
@@ -57,7 +61,32 @@
   ?>
   <div id="home">
      <button><a href="inventory.php"> Rent A Car</a></button>
-
+     <button><a href="parkinginventory.php"> Buy Parking</a></button>
+     
+     <?php
+  define('DB_SERVER', 'localhost');
+  define('DB_USERNAME', 'scaldwell9');
+  define('DB_PASSWORD', 'scaldwell9');
+  define('DB_DATABASE', 'scaldwell9');
+  $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+  if(! $db ) {
+           die('Could not connect: ' . mysql_error());
+        }
+    $sql= "SELECT * FROM usedby WHERE uid=".$_SESSION["uid"]." and DATE(NOW())<rentalend;";
+        $res=$db->query($sql);
+          if ($res->num_rows > 0) {
+            echo "<p>Your current orders: </p>";
+            // output data of each row
+            while($row = $res->fetch_assoc()) {
+                $vid=(int)$row["vid"];
+                $sql2= "SELECT name FROM vehicles WHERE vid=".$vid.";";
+                $res2=$db->query($sql2);
+                $row2 = $res2->fetch_assoc();
+                echo "<p>".$row2["name"]." ".$row["rentalperiod"]." to ".$row["rentalend"]."</p>";
+              }
+            }
+          
+  ?>
   </div>
 
 </body>
