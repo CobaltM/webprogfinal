@@ -100,7 +100,18 @@
                 echo "<p>".$row2["name"]." <br>FROM ".$row["period"]." <br>TO ".$row["periodend"]."</p>";
               }
             }
-          
+    $sql="UPDATE vehicles SET availability = 1 WHERE vid IN (SELECT usedby.vid FROM usedby WHERE DATE(NOW())<usedby.rentalend);";
+      if ($db->query($sql) === TRUE) {
+      } else {
+          //header("Location: register.php");
+          //die("Something went wrong");
+      }
+    $sql="UPDATE parking SET availability = 1 WHERE pid IN (SELECT parkedby.vid FROM parkedby WHERE DATE(NOW())<parkedby.periodend);";
+      if ($db->query($sql) === TRUE) {
+      } else {
+          //header("Location: register.php");
+          //die("Something went wrong");
+      }
   ?>
   </div>
 
