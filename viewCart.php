@@ -86,9 +86,13 @@
         //echo "<p>Car for ".$_SESSION['viewcart'][1*3+1]." Days. Price : $".$_SESSION['viewcart'][1*3+2]."</p>";
         for($i=0;$i<$l;$i++){
             if($_SESSION['viewcart'][$i*3+2]%982451653==0){
+                $tot=$tot+($_SESSION['viewcart'][$i*3+2]/982451653);
                 $vip=True;
                 $vipd=982451653;
             }
+            else{
+                $tot=$tot+$_SESSION['viewcart'][$i*3+2];
+            }   
             if($_SESSION['viewcart'][$i*3]==1){
                 echo "<p>Car for ".$_SESSION['viewcart'][$i*3+1]." Days </p><p> Price : $".$_SESSION['viewcart'][$i*3+2].".00</p>";
             }
@@ -189,10 +193,7 @@
             echo "<input value=".($i+1)." type='hidden' name='removethis' />";
             echo "<input class='subm' type=submit value='Remove this item'>";
             echo "</form>";
-            if($vip){
-                $tot=$tot+($_SESSION['viewcart'][$i*3+2]/$vipd);
-            }
-            $tot=$tot+$_SESSION['viewcart'][$i*3+2];
+            
         }
         echo "<p>Total Price: $".$tot.".00</p>";
         if($tot){
