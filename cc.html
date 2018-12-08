@@ -11,9 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body{
-            background-repeat: no-repeat;
-            background-size: cover;
-
+            background: rgb(rgb(2, 0, 36));
+            background: linear-gradient(50deg, rgba(2,0,36,1) 0%, #c3c3de 70%);
             font-family: "Lucida Sans Unicode", sans-serif;
         }
         h1{
@@ -39,21 +38,61 @@
             min-width: 160px;
             
         }
+        button{
+            background-color: #32425b;
+            color:azure;
+            border: none;
+            padding: 2em;
+            font-size: medium;
+            border-radius: 10%;
+        }
+        a{
+            color:azure;
+        }
+        a:visited{
+            color: #c7daf7;
+        }
+        form{
+            border: #32425b;
+            background-color: #32425b;
+            color: azure;
+            border-radius: 20%;
+            padding: 4em;
+            margin-left: 30%;
+            margin-right: 30%;
+            background: rgb(50, 66, 91, .8);
+            text-align:left;
+
+        }
+        img{
+            height: 12%;
+            width: 12%;
+        
+        }
     </style>
 </head>
     <body>
-      <a href='viewCart.php'> View Cart </a>
+        <h1>Checkout of Rent Car.</h1>
+      <button><a href='viewCart.php'> View Cart </a></button>
     	<form action="validatecard.php" method="post">
-            Cardholder Name: <input required type='text' name='chname' id = 'chname'><br>
-            Card Number: <input required type='number' name = 'cardnumber' id = 'cardnumber'><br>
-            Exp: <input required type='month' name='expm' id='exp'>&nbsp;&nbsp;&nbsp;&nbsp;
-            CVV2: <input required type="number" name="seccode" id = 'seccode'><br>
+            Cardholder Name:<br> <input required type='text' name='chname' id = 'chname'><br>
+            Card Number:<br> <input required type='number' name = 'cardnumber' id = 'cardnumber'><br>
+            Exp: <br><input required type='month' name='expm' id='exp'><br>
+            CVV2:<br> <input required type="number" name="seccode" id = 'seccode'><br>
+
             <div id='cardimg'>
+                <img src="amex.jpg" alt="amex">
+                <img src="discover.jpg" alt="discover">
+                <img src="mastercard.jpg" alt="mastercard">
+                <img src="visa.jpg" alt="visa">
             </div>
+
             <br>
-            Address: Street <input type="text" id = 'streeta1'> City <input type="text" id = 'citya1'><br>
-             State <select name="state" id="state">
-                                                  <option value="" selected="selected">Select a State</option>
+            <h3>Address:</h3> 
+            Street<br>  <input type="text" id = 'streeta1'><br>
+            City <br> <input type="text" id = 'citya1'><br>
+            State <br> <select name="state" id="state">
+                                                 <option value="" selected="selected">Select a State</option>
                                                   <option value="AL">Alabama</option>
                                                   <option value="AK">Alaska</option>
                                                   <option value="AZ">Arizona</option>
@@ -107,9 +146,11 @@
                                                   <option value="WY">Wyoming</option>
                                                   </select> Zip <input type="number" id ='zipa1'> <br>
             <br>
-            Billing Address: Street <input required type="text" id = 'streeta2'> City <input required type="text" id = 'citya2'><br>
+            <h3>Billing Address:</h3> 
+            Street <br><input required type="text" id = 'streeta2'> <br>
+            City<br> <input required type="text" id = 'citya2'><br>
 
-             State <select required name="state" id="state">
+            State<br>  <select required name="state" id="state">
                                                   <option value="" selected="selected">Select a State</option>
                                                   <option value="AL">Alabama</option>
                                                   <option value="AK">Alaska</option>
@@ -162,9 +203,10 @@
                                                   <option value="WV">West Virginia</option>
                                                   <option value="WI">Wisconsin</option>
                                                   <option value="WY">Wyoming</option>
-                                                  </select> Zip <input required type="number" id ='zipa2'> <br>
+                                                  </select> 
+                                                  Zip <input required type="number" id ='zipa2'> <br>
             <br>
-            Phone: (<input type="num" id="pnac">)<input type="num" id="pnn">
+            Phone: (<input type="num" id="pnac" maxlength="3" size="3">)<input type="num" id="pnn" maxlength="7" size="7">
             <div id='submitgoeshere'></div>
             
             
