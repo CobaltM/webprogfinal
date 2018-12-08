@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inventory of Rent Car</title>
+    <title>Parking Inventory of Rent Car</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body{
@@ -66,7 +66,7 @@
 </head>
 <body>
     <button><a href='menu.php'> Back to menu </a></button>
-    <h1>Parking</h1>
+    <h1>Parking Options for Rent Car. </h1>
     <?php
         session_start();
         if($_SESSION['baddate']){
