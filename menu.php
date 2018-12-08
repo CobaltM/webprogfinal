@@ -8,9 +8,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stlyeCars.css" />
     <style>
     body{
-        background-image: url("carBackground.jpg");
+        background-image: url("menuImage.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        font-family: "Lucida Sans Unicode", sans-serif;
     }
     h1{
             text-align: center;
